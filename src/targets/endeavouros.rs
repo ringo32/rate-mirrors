@@ -41,7 +41,7 @@ pub fn fetch_endeavouros_mirrors(
 
     let mirrorlist_file_text = text_from_url(
         Url::from_str(
-            "https://github.com/endeavouros-team/PKGBUILDS/blob/master/endeavouros-mirrorlist/endeavouros-mirrorlist"
+            "https://github.com/endeavouros-team/PKGBUILDS/raw/master/endeavouros-mirrorlist/endeavouros-mirrorlist"
           ).unwrap(),
         target.fetch_mirrors_timeout
     );
