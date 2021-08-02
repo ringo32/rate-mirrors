@@ -2,6 +2,7 @@ use crate::target_configs::archlinux::ArchTarget;
 use crate::target_configs::manjaro::ManjaroTarget;
 use crate::target_configs::stdin::StdinTarget;
 use crate::target_configs::rebornos::RebornOSTarget;
+use crate::target_configs::endeavouros::EndeavourOSTarget;
 use std::fmt::Debug;
 use std::str::FromStr;
 use structopt::StructOpt;
@@ -33,6 +34,9 @@ pub enum Target {
     /// fetch & test rebornos mirrors
     #[structopt(name = "rebornos")]
     RebornOS(RebornOSTarget),
+    /// fetch & test endeavouros mirrors
+    #[structopt(name = "endeavouros")]
+    EndeavourOS(EndeavourOSTarget),
 }
 
 #[derive(Debug, StructOpt)]
