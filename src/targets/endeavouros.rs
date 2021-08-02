@@ -52,11 +52,13 @@ pub fn fetch_endeavouros_mirrors(
         .links(&mirrorlist_file_text)
         .filter_map(|url| Url::from_str(url.as_str()).ok());
 
+   
+    
     let mirrors: Vec<Mirror> = url_iter
         .filter_map(|url| {
             Some(Mirror {
                 country: None,
-                output: format!("Server = {}", url.as_str().to_owned()),
+                output: format!("Server = {}$repo/$arch", url.as_str().to_owned()),
                 url_to_test: url
                     .join(&target.path_to_test)
                     .expect("failed to join path-to-test"),
