@@ -11,7 +11,7 @@ pub struct EndeavourOSTarget {
     ///   speed connections
     #[structopt(
         long = "path-to-test",
-        default_value = "Endeavouros.files",
+        default_value = "endeavouros.files",
         verbatim_doc_comment
     )]
     pub path_to_test: String,
