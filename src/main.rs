@@ -84,6 +84,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         Target::Stdin(target) => &target.comment_prefix,
         Target::Manjaro(target) => &target.comment_prefix,
         Target::RebornOS(target) => &target.comment_prefix,
+        Target::EndeavourOS(target) => &target.comment_prefix,
     };
     let mut output = OutputSink::new(comment_prefix, config.save_to_file.as_deref())?;
     output.consume_comment(format!("STARTED AT: {}", Local::now()));
@@ -116,6 +117,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 target.clone(),
                 mpsc::Sender::clone(&tx_progress),
             ),
+            Target::EndeavourOS(target) => fetch_endeavouros_mirrors(
+                Arc::clone(&config),
+                target.clone(),
+                mpsc::Sender::clone(&tx_progress),
         };
         test_speed_by_countries(
             mirrors,
