@@ -1,3 +1,4 @@
+pub mod endeavouros
 pub mod archlinux;
 pub mod manjaro;
 pub mod rebornos;
