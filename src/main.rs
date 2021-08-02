@@ -121,6 +121,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 Arc::clone(&config),
                 target.clone(),
                 mpsc::Sender::clone(&tx_progress),
+            ),
         };
         test_speed_by_countries(
             mirrors,
