@@ -10,6 +10,7 @@ use crate::speed_test::{test_speed_by_countries, SpeedTestResult, SpeedTestResul
 use crate::targets::archlinux::fetch_arch_mirrors;
 use crate::targets::manjaro::fetch_manjaro_mirrors;
 use crate::targets::rebornos::fetch_rebornos_mirrors;
+use crate::targets::endeavouros::fetch_endeavouros_mirrors;
 use crate::targets::stdin::read_mirrors;
 use chrono::prelude::*;
 use config::{Config, Target};
